@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PhotoData from "./PhotoData";
 
 
-export default function PhotoCard () {
+export default function PhotoCard (props) {
     const [picture, getPicture] = useState([]);
 
     useEffect(() => {
@@ -16,4 +16,12 @@ export default function PhotoCard () {
             console.log('Cannot read data', err);
         })
     }, []);
+
+    return (
+        <div className="photoContainer">
+            <h1>Date</h1>
+            
+
+        </div>
+    )
 }

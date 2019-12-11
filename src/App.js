@@ -1,5 +1,8 @@
 import React from "react";
 import "./App.css";
+// components
+import PhotoData from "./components/PhotoData";
+import PhotoCard from "./components/PhotoCard";
 
 function App() {
   return (
@@ -8,6 +11,7 @@ function App() {
         Read through the instructions in the README.md file to build your NASA
         app! Have fun 🚀!
       </p>
+      <PhotoCard />
     </div>
   );
 }
