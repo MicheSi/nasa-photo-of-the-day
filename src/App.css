@@ -1,6 +1,11 @@
-.App {
+html {
   box-sizing: border-box;
+  background-color: lightgray;
+}
+
+.App {
   text-align: center;
+  
 }
 
 .App-logo {
