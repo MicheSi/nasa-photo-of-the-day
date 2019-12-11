@@ -20,6 +20,7 @@ export default function PhotoCard (props) {
     return (
         <div className="photoContainer">
             <h1>Date</h1>
+            <img />
             
 
         </div>
