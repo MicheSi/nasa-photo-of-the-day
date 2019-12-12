@@ -3,7 +3,7 @@ import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
 
 export default function NavBar (props) {
-    const { className } = props;
+    const { className, changeDate } = props;
     
       const [modal, setModal] = useState(false);
     
@@ -21,7 +21,7 @@ export default function NavBar (props) {
                     <Input type="date" name="date" id="changeDate" placeholder="Date" />
                 </FormGroup>
                 {' '}
-                <Button>Submit</Button>
+                <Button onClick={changeDate}>Submit</Button>
             </Form>
         </ModalBody>
         </Modal>
