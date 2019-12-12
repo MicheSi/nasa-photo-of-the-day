@@ -6,6 +6,7 @@ import { Card, CardTitle, CardText, CardImg, CardImgOverlay } from 'reactstrap';
 
 export default function PhotoCard (props) {
     const [picture, getPicture] = useState([]);
+    
 
     useEffect(() => {
         axios.get('https://api.nasa.gov/planetary/apod?api_key=ZwWLfujY6OMgGUkls4B1eGj5ACTgiIAAbO9fKkv2')
