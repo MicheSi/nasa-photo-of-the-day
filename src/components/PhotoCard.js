@@ -4,9 +4,10 @@ import NavBar from "./Navigation";
 import { Card, CardTitle, CardText, CardImg, CardImgOverlay } from 'reactstrap';
 
 
+
 export default function PhotoCard (props) {
     const [picture, setPicture] = useState([]);
-    const [date, setDate] = useState();
+    const [date, setDate] = useState('');
     
     const changeDate = newDate => {
         setDate(newDate);
@@ -14,14 +15,16 @@ export default function PhotoCard (props) {
 
 
     useEffect(() => {
-        axios.get('https://api.nasa.gov/planetary/apod?api_key=ZwWLfujY6OMgGUkls4B1eGj5ACTgiIAAbO9fKkv2')
+        axios.get(`https://api.nasa.gov/planetary/apod?api_key=ZwWLfujY6OMgGUkls4B1eGj5ACTgiIAAbO9fKkv2&date=${date}`)
         .then(response => {
             setPicture(response.data);
+            setDate(response.data.date);
+            
         })
         .catch(err => {
             console.log('Cannot read data', err);
         })
-    }, []);
+    }, [date]);
 
     return (
         <div className="photoContainer">

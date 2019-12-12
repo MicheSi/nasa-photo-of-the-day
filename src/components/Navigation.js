@@ -3,10 +3,7 @@ import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
 
 export default function NavBar (props) {
-    const {
-        buttonLabel,
-        className
-      } = props;
+    const { className } = props;
     
       const [modal, setModal] = useState(false);
     
