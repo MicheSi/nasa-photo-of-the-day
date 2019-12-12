@@ -4,11 +4,10 @@ export default function NavBar (props) {
 
     return (
         <nav>
-            <img></img>
             <a href="#">Home</a>
             <a href="#">Photo of the Day</a>
             <a href="#">Previous Photos</a>
-            <a href="#">NASA</a>
+            <a href="https://www.nasa.gov/">NASA</a>
         </nav>
     )
 }
