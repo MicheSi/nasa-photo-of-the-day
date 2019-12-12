@@ -1,22 +1,33 @@
 import React, {useState} from "react";
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
+import { Form, FormGroup, Label, Input } from 'reactstrap';
 
 export default function NavBar (props) {
-    const [dropdownOpen, setDropdownOpen] = useState(false);
-
-    const toggle = () => setDropdownOpen(prevState => !prevState);
+    const {
+        buttonLabel,
+        className
+      } = props;
+    
+      const [modal, setModal] = useState(false);
+    
+      const toggle = () => setModal(!modal);
 
     return (
-        <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-        <DropdownToggle caret>
-          Menu
-          </DropdownToggle>
-          <DropdownMenu left>
-            <DropdownItem><a href="#">Home</a></DropdownItem>
-            <DropdownItem><a href="#">Photo of the Day</a></DropdownItem>
-            <DropdownItem><a href="#">Previous Photos</a></DropdownItem>
-            <DropdownItem><a href="https://www.nasa.gov/">NASA</a></DropdownItem>
-        </DropdownMenu>
-        </Dropdown>
-    )
+    <div>
+      <Button color="secondary" onClick={toggle}>Change Date</Button>
+      <Modal isOpen={modal} toggle={toggle} className={className}>
+        <ModalHeader toggle={toggle}>Select a Date</ModalHeader>
+        <ModalBody>
+            <Form inline>
+                <FormGroup>
+                    <Label for="changeDate" hidden>Date</Label>
+                    <Input type="date" name="date" id="changeDate" placeholder="Date" />
+                </FormGroup>
+                {' '}
+                <Button>Submit</Button>
+            </Form>
+        </ModalBody>
+        </Modal>
+    </div>
+    );
 }

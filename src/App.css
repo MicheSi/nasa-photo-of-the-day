@@ -3,10 +3,8 @@ html {
   background-color: lightgray;
 }
 
-
 .App {
   text-align: center;
-  
 }
 
 .App-logo {
@@ -34,36 +32,6 @@ html {
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 2% 10%;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-a:hover {
-  color: white;
-}
-
-.date {
-  font-size: 2.4rem;
-}
-
-.image {
-  max-width: 450px;
-}
-
-.title {
-  font-size: 2rem;
-}
-
-.description {
-  padding: 0 10%;
-}
 
 @keyframes App-logo-spin {
   from {
