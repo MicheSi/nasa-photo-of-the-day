@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Card, CardTitle, CardText, CardImg, CardImgOverlay } from 'reactstrap';
 
 
 export default function PhotoCard (props) {
@@ -17,10 +18,17 @@ export default function PhotoCard (props) {
 
     return (
         <div className="photoContainer">
-            <h1 className="date">{picture.date}</h1>
-            <img className="image" src={picture.url} alt="Nasa Space Photo of the Day" />
-            <h3 className="title">{picture.title}</h3>
-            <p className="description">{picture.explanation}</p>
+            <Card inverse>
+                <CardImg width="100%" src={picture.url} alt="Nasa Space Photo of the Day" />
+                <CardImgOverlay>
+                    <CardTitle fontSize="2.4rem">{picture.title}</CardTitle>
+                    <CardText>{picture.explanation}</CardText>
+                    <CardText>
+                        <small className="text-muted">{picture.date}</small>
+                    </CardText>
+                </CardImgOverlay>
+            </Card>
+            
         </div>
     )
 }
