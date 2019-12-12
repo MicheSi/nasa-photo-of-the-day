@@ -30,6 +30,10 @@ html {
   color: #61dafb;
 }
 
+.photoContainer {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
 nav {
   display: flex;
   justify-content: space-between;

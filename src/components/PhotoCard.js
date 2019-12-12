@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import NavBar from "./Navigation";
 import { Card, CardTitle, CardText, CardImg, CardImgOverlay } from 'reactstrap';
 
 
@@ -21,10 +22,11 @@ export default function PhotoCard (props) {
             <Card inverse>
                 <CardImg width="100%" src={picture.url} alt="Nasa Space Photo of the Day" />
                 <CardImgOverlay>
-                    <CardTitle fontSize="2.4rem">{picture.title}</CardTitle>
-                    <CardText>{picture.explanation}</CardText>
+                    <NavBar />
+                    <CardTitle style={{fontSize: "2.4rem", fontWeight: "bold", marginTop: "5%"}}>{picture.title}</CardTitle>
+                    <CardText style={{fontSize: "1.6rem", margin: "5% 15%"}}>{picture.explanation}</CardText>
                     <CardText>
-                        <small className="text-muted">{picture.date}</small>
+                        <small className="text-muted" style={{fontSize: "1.4rem"}}>{picture.date}</small>
                     </CardText>
                 </CardImgOverlay>
             </Card>
